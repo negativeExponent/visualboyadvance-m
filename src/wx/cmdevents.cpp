@@ -2008,7 +2008,7 @@ EVT_HANDLER_MASK(DebugGDBDisconnect, "Disconnect GDB", CMDEN_GDB)
     debugger = false;
     dbgMain = NULL;
     dbgSignal = NULL;
-    dbgOutput = NULL;
+    dbgOutput = wxvbam_debug_out;
     remotePort = 0;
     remoteCleanUp();
     cmd_enable &= ~CMDEN_GDB;

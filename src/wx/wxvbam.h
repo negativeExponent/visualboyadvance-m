@@ -72,6 +72,8 @@ inline std::string ToString(const wxChar* aString)
     return std::string(wxString(aString).mb_str(wxConvUTF8));
 }
 
+void wxvbam_debug_out(const char* str, uint32_t addr);
+
 class MainFrame;
 
 class wxvbamApp : public wxApp {

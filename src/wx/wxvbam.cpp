@@ -32,6 +32,12 @@
 IMPLEMENT_APP(wxvbamApp)
 IMPLEMENT_DYNAMIC_CLASS(MainFrame, wxFrame)
 
+void wxvbam_debug_out(const char* str, uint32_t addr)
+{
+    wxGetApp().log.append(str);
+    wxGetApp().frame->UpdateViewers();
+}
+
 // Initializer for struct cmditem
 cmditem new_cmditem(const wxString cmd, const wxString name, int cmd_id,
                     int mask_flags, wxMenuItem* mi)
@@ -196,6 +202,8 @@ bool wxvbamApp::OnInit()
     dup2(1, 2); // redirect stderr to stdout
 #endif
     using_wayland = IsItWayland();
+
+    dbgOutput = wxvbam_debug_out;
 
     // use consistent names for config
     SetAppName(_("visualboyadvance-m"));

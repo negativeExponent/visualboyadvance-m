@@ -183,7 +183,7 @@ freebsd_installdeps() {
     check sudo pkg update
 
     # currently the wx30 and wx31 packages produce GTK errors on CURRENT (as of 04/2019)
-    check sudo pkg install -y llvm-devel cmake ccache nasm ffmpeg gettext-tools gettext png pkgconf sdl2 sfml wx31-gtk3 iconv zip ninja
+    check sudo pkg install -y llvm-devel cmake ccache nasm ffmpeg gettext-tools gettext png pkgconf sdl2 sfml wx31-gtk3 iconv zip ninja openal-soft
 
     build_instructions
 }
