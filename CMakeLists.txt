@@ -636,7 +636,6 @@ set(
     SRC_GBA
     src/gba/agbprint.cpp
     src/gba/bios.cpp
-    src/gba/BreakpointStructures.cpp
     src/gba/Cheats.cpp
     src/gba/CheatSearch.cpp
     src/gba/debugger-expr-lex.cpp
@@ -662,6 +661,12 @@ set(
     src/gba/Sound.cpp
     src/gba/Sram.cpp
 )
+
+if(ENABLE_DEBUGGER)
+    list(APPEND SRC_GBA
+        src/gba/BreakpointStructures.cpp
+    )
+endif()
 
 set(
     HDR_GBA
